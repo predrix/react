@@ -1,0 +1,30 @@
+@import url(https://fonts.googleapis.com/css?family=Rubik:400,500);
+
+* {box-sizing: border-box;}
+
+
+ul {
+    font-family: 'Rubik', sans-serif;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+button {
+	background-color: #5CB3FF;
+	width: 25%;
+	height: 30px;
+	font-size: 20px;
+	top: 5px;
+}
+a {
+	text-decoration: none;
+}
+img:hover {
+	opacity: 0.5;
+}
+input {
+	width: 25%;
+	height: 30px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
