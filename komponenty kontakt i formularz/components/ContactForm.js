@@ -28,7 +28,4 @@ var ContactForm = React.createClass({
 })
 
 
-<form className={'ContactForm'}>
-  <input type="text" 
-
 
