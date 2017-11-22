@@ -10,13 +10,6 @@ var Counter = React.createClass({
             counter: this.state.counter - 1
         });
     },
-
-    increment: function() {
-        this.setState({
-            counter: this.state.counter + 1
-        });
-    },
-
 /*    componentWillMount: function() {
         concole.log(wywoływania przed pierwszym renderem);
     },
@@ -43,11 +36,9 @@ var Counter = React.createClass({
         concole.log(tylko do czyszczenia); 
     }, */
     render: function() {
-        return ( React.createElement('div', {onClick: this.increment},
-            React.createElement('button', {}, 'Licznik ' + this.state.counter)),
-            React.createElement('div', {onClick: this.decrement},
-            React.createElement('button', {}, 'Licznik ' + this.state.counter))
-        )
+        return React.createElement('div', {onClick: this.decrement},
+            React.createElement('button', {}, 'Licznik ' + this.state.counter)
+        );
     }
 });
 var element = React.createElement(Counter);
