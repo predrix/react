@@ -49,5 +49,3 @@ var Counter = React.createClass({
 });
 var element = React.createElement(Counter);
 ReactDOM.render(element, document.getElementById('app'));
-
-React.createElement('button', {onClick: this.increment}, 'Licznik ' + this.state.counter)
