@@ -16,39 +16,41 @@ var Counter = React.createClass({
         });
     },
     componentWillMount: function() {
-        //concole.log(wywoływania przed pierwszym renderem);
+    	console.log('wywoływania przed pierwszym renderem')
     },
-
     componentDidMount: function() {
-        //concole.log(aktualizacja stanu komponentu);
+        console.log('aktualizacja stanu komponentu');
     },
 
     componentWillReciveProps: function() {
-        //concole.log(Do spr czy w wyniku zmiany obiektu thisprops nastąpiło odświeżenie);
+        console.log('Do spr czy w wyniku zmiany obiektu thisprops nastąpiło odświeżenie');
     },
 
-    /*shouldComponentUpdate: function() {
-       concole.log(zwrócony false powstrzymuje powtórne renderowanie);
-    }, */
+    shouldComponentUpdate: function() {
+       console.log('zwrócony false powstrzymuje powtórne renderowanie');
+    }, 
 
     componentWillUpdate: function() {
-       // concole.log(podobna do componentwillmount);
+       console.log('podobna do componentwillmount');
     },
     componentDidUpdate: function() {
-       //concole.log(moze aktualizować stan komponentu);
+       console.log('moze aktualizować stan komponentu');
     },
     componentWillUnmount: function() {
-        //concole.log(tylko do czyszczenia); 
+        console.log('tylko do czyszczenia'); 
     }, 
     render: function() {
         return React.createElement('div', {}, 
-        		React.createElement('button', {onClick: this.decrement}, 'Dodaj '), 
-        		React.createElement('button', {onClick: this.increment}, 'Odejmij '),
-        		React.createElement('span', {}, this.state.counter));
+                React.createElement('button', {onClick: this.decrement}, 'Dodaj '), 
+                React.createElement('button', {onClick: this.increment}, 'Odejmij '),
+                React.createElement('span', {}, this.state.counter));
     }
 });
 var element = React.createElement(Counter);
 ReactDOM.render(element, document.getElementById('app'));
 
+var element = React.createElement(Counter);
+ReactDOM.render(element, document.getElementById('app2'));
 
-
+var element = React.createElement(Counter);
+ReactDOM.render(element, document.getElementById('app3'));
