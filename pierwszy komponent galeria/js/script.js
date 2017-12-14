@@ -10,31 +10,52 @@ var movies = [
     desc: 'Film o królu sawanny'
   }
 ];
-
-var Movie = React.createClass({
-	propTypes: {}
-
-	render: function () {
-		return (
-			React.createElement('div', {},
-				React.createElement('h1', {}, 'Lista filmów'),
-				React.createElement('ul', {}, )
-    		);
-    	)
-    };			
-});
+var MoviesList = React.createClass({
+  render : function () {
+    return (
+      React.createElement('p', {}, 'Lista filmów' )
+      )
+  }
+})
 var MovieTitle = React.createClass({
-	propTypes: {}
-
 	render : function () {
 		return (
-			)
+			 React.createElement('p', {}, this.props.title)
+		)	 
 	}
 })
+var MovieDescription = React.createClass({
+  render : function () {
+    return (
+    	React.createElement('p', {}, this.props.desc)
+      )
+  }
+})
+var movie = React.createClass ({
+	render: function () {
+		return (
+			React.createElement('li', {}, 
+				React.createElement(MovieTitle, {title: this.props.title}),
+				React.createElement(MovieDescription, {desc: this.props.desc})
+			)
+		)	
+	}
+})
+var Movies = React.createClass({
+	propTypes: {},
 
-
-
-
-var element = React.createElement(Movie, {key: movie_id, movie_title, movie_desc},);
+	render: function () {
+		debugger
+		return (
+			React.createElement('div', {}, MoviesList,
+				React.createElement('ul', {}, movies.map(function(film){
+                  	React.createElement(movie, {desc: film.desc, title: film.title} )
+                  })
+				)
+    		)
+    	)
+    }		
+});
+var element = React.createElement(Movies);
 ReactDOM.render(element, document.getElementById('app'));
 
